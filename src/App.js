@@ -2,26 +2,25 @@ import React, { useState } from 'react'
 import UserTable from './tables/UserTable'
 import AddUserForm from './forms/AddUserForm'
 import EditUserForm from './forms/EditUserForm'
+import { useLocalStorage } from './utils/localStorage'
 
 const App = () => {
 
-  const [users, setUsers] = useState([])
-
-  const [editing, setEditing] = useState(false)
-
-  const initialFormState = { id: null, name: '', username: '' }
-
-  const [currentUser, setCurrentUser] = useState(initialFormState)
-
-  const editRow = user => {
-    setEditing(true)
-
-    setCurrentUser({ id: user.id, name: user.name, username: user.username })
-  }
+  // const [users, setUsers] = useState([])
+  const [users, setUsers] = useLocalStorage('users', []);
 
   const addUser = user => {
     user.id = users.length + 1
     setUsers([...users, user])
+  }
+
+  const initialFormState = { id: null, name: '', username: '' }
+  const [currentUser, setCurrentUser] = useState(initialFormState)
+  const [editing, setEditing] = useState(false)
+
+  const editRow = user => {
+    setEditing(true)
+    setCurrentUser({ id: user.id, name: user.name, username: user.username })
   }
 
   const deleteUser = id => {
