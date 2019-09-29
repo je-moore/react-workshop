@@ -2,6 +2,10 @@
 
 ...for exercise...for exercise...
 
+- CRUD using hooks
+- persist to localStorage
+- to be continued...
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
