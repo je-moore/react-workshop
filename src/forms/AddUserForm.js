@@ -1,6 +1,14 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
 const AddUserForm = props => {
+
+  AddUserForm.propTypes = {
+    addUser: PropTypes.func.isRequired
+  }
+
+  const { addUser } = props
+
   const initialFormState = { id: null, name: '', username: '' }
   const [user, setUser] = useState(initialFormState)
 
@@ -14,7 +22,7 @@ const AddUserForm = props => {
     event.preventDefault()
     if (!user.name || !user.username) return
 
-    props.addUser(user)
+    addUser(user)
     setUser(initialFormState)
   }
 
