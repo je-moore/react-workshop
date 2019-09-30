@@ -1,10 +1,10 @@
-# React Workshop
+# React Workspace
 
-...for exercise...for exercise...
+A place to jog my React knowledge
 
 - CRUD using hooks
 - persist to localStorage
-- (to be continued)
+- propTypes
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
