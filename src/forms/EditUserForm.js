@@ -3,18 +3,17 @@ import PropTypes from 'prop-types'
 
 const EditUserForm = props => {
   EditUserForm.propTypes = {
-    editing: PropTypes.bool.isRequired,
     setEditing: PropTypes.func.isRequired,
     currentUser: PropTypes.object.isRequired,
     updateUser: PropTypes.func.isRequired,
   }
 
-  const { editing, setEditing, currentUser, updateUser } = props
+  const { setEditing, currentUser, updateUser } = props
 
   const [user, setUser] = useState(currentUser)
 
   useEffect(() => {
-    setUser(currentUser)
+    setUser(props.currentUser)
   }, [props])
 
   const handleInputChange = event => {

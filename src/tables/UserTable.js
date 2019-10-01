@@ -3,13 +3,12 @@ import PropTypes from 'prop-types'
 
 const UserTable = props => {
   UserTable.propTypes = {
-    name: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired,
+    users: PropTypes.object.isRequired,
     editRow: PropTypes.func.isRequired,
     deleteUser: PropTypes.func.isRequired,
   }
 
-  const { name, username, editRow, deleteUser } = props
+  const { users, editRow, deleteUser } = props
 
   return (
     <table>
@@ -21,20 +20,20 @@ const UserTable = props => {
         </tr>
       </thead>
       <tbody>
-        {props.users.length > 0 ? (
-          props.users.map(user => (
+        {users.length > 0 ? (
+          users.map(user => (
             <tr key={user.id}>
               <td>{user.name}</td>
               <td>{user.username}</td>
               <td>
                 <button
-                  onClick={() => props.editRow(user)}
+                  onClick={() => editRow(user)}
                   className="button muted-button"
                 >
                   Edit
                 </button>
                 <button
-                  onClick={() => props.deleteUser(user.id)}
+                  onClick={() => deleteUser(user.id)}
                   className="button muted-button"
                 >
                   Delete
