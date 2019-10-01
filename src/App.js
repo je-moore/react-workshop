@@ -5,9 +5,7 @@ import EditUserForm from './forms/EditUserForm'
 import { useLocalStorage } from './utils/localStorage'
 
 const App = () => {
-
-  // const [users, setUsers] = useState([])
-  const [users, setUsers] = useLocalStorage('users', []);
+  const [users, setUsers] = useLocalStorage('users', [])
 
   const addUser = user => {
     user.id = users.length + 1

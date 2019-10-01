@@ -2,12 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const UserTable = props => {
-
   UserTable.propTypes = {
     name: PropTypes.string.isRequired,
     username: PropTypes.string.isRequired,
     editRow: PropTypes.func.isRequired,
-    deleteUser:  PropTypes.func.isRequired
+    deleteUser: PropTypes.func.isRequired,
   }
 
   const { name, username, editRow, deleteUser } = props
@@ -28,10 +27,16 @@ const UserTable = props => {
               <td>{user.name}</td>
               <td>{user.username}</td>
               <td>
-                <button onClick={() => props.editRow(user) } className="button muted-button">
+                <button
+                  onClick={() => props.editRow(user)}
+                  className="button muted-button"
+                >
                   Edit
                 </button>
-                <button onClick={() => props.deleteUser(user.id)} className="button muted-button">
+                <button
+                  onClick={() => props.deleteUser(user.id)}
+                  className="button muted-button"
+                >
                   Delete
                 </button>
               </td>
