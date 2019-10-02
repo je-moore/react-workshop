@@ -5,7 +5,9 @@ A place to jog my React knowledge
 - CRUD using hooks
 - persist to localStorage
 - propTypes
-- prettier
+- Prettier
+- Jest / Enzyme
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

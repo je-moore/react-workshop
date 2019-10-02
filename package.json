@@ -32,9 +32,12 @@
     ]
   },
   "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.1",
-    "prettier": "1.18.2"
+    "prettier": "1.18.2",
+    "react-test-renderer": "^16.10.1"
   },
   "prettier": {
     "trailingComma": "es5",
